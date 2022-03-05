@@ -1,0 +1,304 @@
+﻿<Window x:Class="payrollSystem_Version2.SuperPayroll"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:payrollSystem_Version2"
+        mc:Ignorable="d"
+         Title="PAYROLL" Height="750.0" Width="1200.0" WindowStartupLocation="CenterScreen">
+    <Grid Margin="1,0,3.4,1.2">
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Margin="-7,0,-3.8,-6.4" Width="1200" RenderTransformOrigin="0.5,0.5" >
+            <TabControl.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.1"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.398"/>
+                </TransformGroup>
+            </TabControl.RenderTransform>
+
+            <!--tab for employee details-->
+            <TabItem x:Name="createPayroll" Header="CREATE PAYROLL" Margin="-2,-2,-67.6,-2.6" FontSize="16" FontWeight="Bold" FontFamily="Cambria Math" Background="#FFD4AF37" ToolTip="Create Payroll of Employees">
+
+                <Grid Background="#FF2B2E3D" Margin="-5,0,-7.6,-1.8" HorizontalAlignment="Left" Width="1207" Height="696" VerticalAlignment="Bottom">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="925*"/>
+                        <ColumnDefinition Width="29*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel VerticalAlignment="Center" Margin="1072,16,19.2,631" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+                        <StackPanel.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </StackPanel.RenderTransform>
+                        <materialDesign:PopupBox HorizontalAlignment="Stretch" Margin="3,5,75.8,5" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Foreground="#FFFCFCFC" Height="39" RenderTransformOrigin="0.5,0.5">
+                            <materialDesign:PopupBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </materialDesign:PopupBox.RenderTransform>
+                            <StackPanel Width="150">
+                                <Button x:Name="btnHome" Content="Home" Background="#FFD4AF37" Click="btnHome_Click_1"/>
+                                <Button x:Name="btnCalendar" Content="Calendar" Background="#FFD4AF37" Click="btnCalendar_Click" />
+                                <Button x:Name="btnAbout" Content="About Us" Background="#FFD4AF37" Click="btnAbout_Click" />
+                                <Button x:Name="btnContact" Content="Contact Us" Background="#FFD4AF37" Click="btnContact_Click" />
+                                <Separator/>
+                                <Button x:Name="btnHelp" Content="Help" Background="#FFD4AF37" Click="btnHelp_Click"/>
+
+                            </StackPanel>
+                        </materialDesign:PopupBox>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Left" Height="54" Margin="70,83,0,0" VerticalAlignment="Top" Width="54">
+                        <Image Source="resources/worker.png" Height="52" Margin="0,0,-0.6,0"/>
+                    </StackPanel>
+                    <Label x:Name="label1_Copy" Content="Employee Details:" HorizontalAlignment="Left" Height="35" Margin="132,94,0,0" VerticalAlignment="Top" Width="157" FontSize="18" FontFamily="Lucida Bright" Foreground="#FFD4AF37"/>
+                    <Label x:Name="label_Copy5" Content="Employee Id:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="102" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8" Margin="218,133,0,0"/>
+                    <Label x:Name="label_Copy" Content="Employee Name:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="121" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8" Margin="194,176,0,0"/>
+                    <TextBox x:Name="txtEmployeeName" HorizontalAlignment="Left" Height="32" Margin="349,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="342" Background="#FF76798A" BorderBrush="#FF686868" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="Black"/>
+                    <StackPanel HorizontalAlignment="Left" Height="53" Margin="71,213,0,0" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.465,1.066">
+                        <Image Source="resources/payrollDetails.png" Margin="0,0,-6.2,0" Height="53"/>
+                    </StackPanel>
+                    <Label x:Name="label1_Copy1" Content="Payroll Details:" HorizontalAlignment="Left" Height="37" Margin="137,225,0,0" VerticalAlignment="Top" Width="157" FontSize="18" FontFamily="Lucida Bright" Foreground="#FFD4AF37"/>
+                    <Label x:Name="label_Copy1" Content="Pay Day:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="68" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8" Margin="213,266,0,0"/>
+                    <TextBox x:Name="txtEmployeeId1" HorizontalAlignment="Left" Height="28" Margin="350,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Background="#FF76798A" BorderBrush="#FF686868" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="Black"/>
+                    <Label x:Name="label_Copy2" Content="No. of Days:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="90" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8" Margin="188,297,0,0"/>
+                    <TextBox x:Name="txtNumDays" PreviewTextInput="Textbox_PreviewTextInput" HorizontalAlignment="Left" Height="25" Margin="291,331,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Background="#FF76798A" BorderBrush="#FF686868" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" TextChanged="txtNumDays_TextChanged" Foreground="Black"/>
+                    <Label Content="Daily Rate:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="99" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8" Margin="464,267,0,0"/>
+                    <TextBox x:Name="txtDailyRate" PreviewTextInput="Textbox_PreviewTextInput" HorizontalAlignment="Left" Height="27" Margin="564,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" Background="#FF76798A" BorderBrush="#FF686868" RenderTransformOrigin="1.72,0.809" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="Black" IsEnabled="False"/>
+                    <Label x:Name="label_Copy4" Content="Rate wage:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="82" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8" Margin="465,328,0,0"/>
+                    <TextBox x:Name="txtRatewage" PreviewTextInput="Textbox_PreviewTextInput" HorizontalAlignment="Left" Height="25" Margin="564,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Background="#FF76798A" BorderBrush="#FF686868" RenderTransformOrigin="1.72,0.809" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="Black"/>
+                    <Label x:Name="label_Copy6" Content="On-Leave:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="80" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8" Margin="200,363,0,0"/>
+                    <Label x:Name="label_Copy7" Content="Regular Holliday :" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="130" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8" Margin="149,405,0,0"/>
+                    <TextBox x:Name="txtRegOTperDay" PreviewTextInput="Textbox_PreviewTextInput" HorizontalAlignment="Left" Height="25" Margin="564,447,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Background="#FF76798A" BorderBrush="#FF686868" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="Black"/>
+                    <Label x:Name="label_Copy10" Content="Hours of OT :" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="99" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8" Margin="448,406,0,0"/>
+                    <Label x:Name="label_Copy11" Content="Regular OT:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="90" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8" Margin="457,445,0,0"/>
+                    <TextBox x:Name="txtHoursOT" PreviewTextInput="Textbox_PreviewTextInput" HorizontalAlignment="Left" Height="25" Margin="564,407,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Background="#FF76798A" BorderBrush="#FF686868" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" TextChanged="txtHoursOT_TextChanged" Foreground="Black"/>
+                    <Label x:Name="label_Copy12" Content="Holliday Pay :" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="102" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8" Margin="445,367,0,0"/>
+                    <TextBox x:Name="txtHollidayPay" PreviewTextInput="Textbox_PreviewTextInput" HorizontalAlignment="Left" Height="25" Margin="564,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Background="#FF76798A" BorderBrush="#FF686868" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="Black"/>
+                    <Label x:Name="label_Copy13" Content="Basic Pay:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="76" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8" Margin="470,489,0,0"/>
+                    <TextBox x:Name="txtBasicPay" PreviewTextInput="Textbox_PreviewTextInput" HorizontalAlignment="Left" Height="26" Margin="565,489,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Background="#FF76798A" BorderBrush="{x:Null}" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" RenderTransformOrigin="0.485,0.377" CaretBrush="#FFF19561" SelectionBrush="#FF0078D7" Foreground="Black"/>
+                    <Label x:Name="label_Copy14" Content="NET INCOME:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="139" FontFamily="Lucida Bright" FontSize="18" FontWeight="Bold" Foreground="#FFD4AF37" Margin="144,549,0,0"/>
+                    <TextBox x:Name="txtNetIncome" PreviewTextInput="Textbox_PreviewTextInput" HorizontalAlignment="Left" Height="59" Margin="291,535,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="401" Background="#FFB5B96A" BorderBrush="{x:Null}" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" FontSize="36" SelectionBrush="#FFF19561" CaretBrush="#FFF19561"/>
+                    <Label x:Name="label1_Copy2" Content="Other Deductions:" HorizontalAlignment="Left" Height="29" Margin="742,330,0,0" VerticalAlignment="Top" Width="176" FontSize="18" FontFamily="Lucida Bright" Foreground="#FFD4AF37"/>
+                    <Label x:Name="label_Copy15" Content="Cash advance:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="103" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8" Margin="814,134,0,0"/>
+                    <TextBox x:Name="txtcashAdvance" PreviewTextInput="Textbox_PreviewTextInput" HorizontalAlignment="Left" Height="24" Margin="935,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" Background="#FF76798A" BorderBrush="#FF686868" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" TextChanged="txtcashAdvance_TextChanged" Foreground="Black"/>
+                    <Label x:Name="label_Copy16" Content="SSS:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="37" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8" Margin="880,211,0,0"/>
+                    <TextBox x:Name="txtSSS" PreviewTextInput="Textbox_PreviewTextInput" HorizontalAlignment="Left" Height="25" Margin="937,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" Background="#FF76798A" BorderBrush="#FF686868" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="Black"/>
+                    <Label x:Name="label_Copy17" Content="Pag-ibig:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="69" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8" Margin="848,171,0,0"/>
+                    <TextBox x:Name="txtPagibig" PreviewTextInput="Textbox_PreviewTextInput" HorizontalAlignment="Left" Height="26" Margin="937,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" Background="#FF76798A" BorderBrush="#FF686868" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="Black"/>
+                    <Label x:Name="label_Copy18" Content="Philhealth:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="85" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8" Margin="832,250,0,0"/>
+                    <TextBox x:Name="txtPhilhealth" PreviewTextInput="Textbox_PreviewTextInput" HorizontalAlignment="Left" Height="24" Margin="938,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" Background="#FF76798A" BorderBrush="#FF686868" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="Black"/>
+                    <Label x:Name="label_Copy20" Content="Deductions:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="90" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8" Margin="815,367,0,0"/>
+                    <TextBox x:Name="txtdeduction3" HorizontalAlignment="Left" Height="27" Margin="815,485,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" Background="#FF76798A" BorderBrush="#FF686868" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="Black"/>
+                    <TextBox x:Name="txtdeduction2" HorizontalAlignment="Left" Height="28" Margin="814,445,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" Background="#FF76798A" BorderBrush="#FF686868" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="Black"/>
+                    <TextBox x:Name="txtdeduction1" HorizontalAlignment="Left" Height="26" Margin="815,407,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" Background="#FF76798A" BorderBrush="#FF686868" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="Black"/>
+                    <TextBox x:Name="txtdeduction1val" PreviewTextInput="Textbox_PreviewTextInput" HorizontalAlignment="Left" Height="25" Margin="1006,408,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" Background="#FF76798A" BorderBrush="#FF686868" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" TextChanged="txtdeduction1val_TextChanged" Foreground="Black"/>
+                    <TextBox x:Name="txtdeduction2val" PreviewTextInput="Textbox_PreviewTextInput" HorizontalAlignment="Left" Height="28" Margin="1006,445,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" Background="#FF76798A" BorderBrush="#FF686868" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" TextChanged="txtdeduction2val_TextChanged" Foreground="Black"/>
+                    <TextBox x:Name="txtdeduction3val" PreviewTextInput="Textbox_PreviewTextInput" HorizontalAlignment="Left" Height="29" Margin="1006,484,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" Background="#FF76798A" BorderBrush="#FF686868" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" TextChanged="txtdeduction3val_TextChanged" Foreground="Black"/>
+                    <TextBox x:Name="txtTotaldeduction" PreviewTextInput="Textbox_PreviewTextInput" HorizontalAlignment="Left" Height="27" Margin="938,540,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Background="#FF76798A" BorderBrush="#FF686868" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="Black" SelectionOpacity="-9"/>
+                    <Label x:Name="label_Copy21" Content="TOTAL DEDUCTIONS:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="217" FontFamily="Lucida Bright" FontSize="18" FontWeight="Bold" Foreground="#FFD4AF37" Margin="712,539,0,0"/>
+                    <Button x:Name="btnSave" Content="SAVE" HorizontalAlignment="Left" Margin="559,640,0,0" VerticalAlignment="Top" Width="135" Height="30" Background="#FF21DEB5" Foreground="White" FontFamily="Cambria Math" FontWeight="Bold" FontSize="18" BorderBrush="{x:Null}" Click="btnSave_Click">
+                        <Button.Effect>
+                            <DropShadowEffect Color="#FF686868"/>
+                        </Button.Effect>
+                    </Button>
+                    <Button x:Name="btnUpdate" Content="UPDATE" HorizontalAlignment="Left" Margin="741,639,0,0" VerticalAlignment="Top" Width="135" Height="30" Background="#FF5C93FB" Foreground="White" FontFamily="Cambria Math" FontWeight="Bold" FontSize="18" BorderBrush="{x:Null}" Click="btnUpdate_Click">
+                        <Button.Effect>
+                            <DropShadowEffect Color="#FF686868"/>
+                        </Button.Effect>
+                    </Button>
+                    <Label x:Name="label_Copy9" Content="Withholding:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="100" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8" Margin="816,288,0,0"/>
+                    <TextBox x:Name="txtWithholding" PreviewTextInput="Textbox_PreviewTextInput" HorizontalAlignment="Left" Height="24" Margin="938,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" Background="#FF76798A" BorderBrush="#FF686868" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="Black"/>
+                    <Label x:Name="label_Copy23" Content="Amount:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="90" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8" Margin="1004,369,0,0"/>
+                    <DatePicker x:Name="PayDay" HorizontalAlignment="Left" Margin="290,270,0,0" VerticalAlignment="Top" Width="139" Background="#FF757889" Height="25" HorizontalContentAlignment="Left" Foreground="Black"/>
+                    <Label x:Name="label" Content="PAYROLL" HorizontalAlignment="Left" Margin="559,13,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.071,-0.111" Height="60" Width="204" FontSize="48" FontWeight="Bold" Foreground="#FFD4F0E3"/>
+                    <StackPanel HorizontalAlignment="Left" Height="116" Margin="443,-15,0,0" VerticalAlignment="Top" Width="118">
+                        <Image Source="resources/logo1.png" Height="135" Margin="-4,0,-5.6,0" HorizontalAlignment="Left" Width="128"/>
+                    </StackPanel>
+                    <TextBox x:Name="txtholnumdays" PreviewTextInput="Textbox_PreviewTextInput" HorizontalAlignment="Left" Height="25" Margin="291,407,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Background="#FF76798A" BorderBrush="#FF686868" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" TextChanged="txtholnumdays_TextChanged" Foreground="Black" RenderTransformOrigin="0.5,0.5">
+                        <TextBox.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleY="0.003"/>
+                                <RotateTransform/>
+                                <TranslateTransform Y="-0.003"/>
+                            </TransformGroup>
+                        </TextBox.RenderTransform>
+                    </TextBox>
+                    <Label x:Name="label_Copy3" Content="Night Differential:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="132" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8" Margin="145,490,0,0"/>
+                    <TextBox x:Name="txtDifferential" PreviewTextInput="Textbox_PreviewTextInput" HorizontalAlignment="Left" Height="25" Margin="291,489,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Background="#FF76798A" BorderBrush="#FF686868" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="Black" TextChanged="txtDifferential_TextChanged"/>
+                    <TextBlock x:Name="date"  Foreground="White" FontSize="12" Padding="50 0 0 0 " HorizontalAlignment="Left" Width="223" Margin="30,22,0,601" ><Run Text="            "/><Run Text="9/26/2019 2:50:36 AM"/></TextBlock>
+                    <TextBox x:Name="txtLeave" PreviewTextInput="Textbox_PreviewTextInput" HorizontalAlignment="Left" Height="25" Margin="291,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Background="#FF76798A" BorderBrush="#FF686868" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="Black" TextChanged="txtLeave_TextChanged"/>
+                    <Label x:Name="label_Copy8" Content="Regular:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="68" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8" Margin="211,327,0,0"/>
+                    <Label x:Name="label1_Copy9" Content="Deductions:" HorizontalAlignment="Left" Height="29" Margin="755,96,0,0" VerticalAlignment="Top" Width="157" FontSize="18" FontFamily="Lucida Bright" Foreground="#FFD4AF37"/>
+                    <Label x:Name="label_Copy19" Content="Special Holliday :" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="125" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8" Margin="154,444,0,0"/>
+                    <TextBox x:Name="txtspecialhol" PreviewTextInput="Textbox_PreviewTextInput" HorizontalAlignment="Left" Height="25" Margin="291,446,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Background="#FF76798A" BorderBrush="#FF686868" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" TextChanged="txtspecialhol_TextChanged" Foreground="Black" RenderTransformOrigin="0.5,0.5">
+                        <TextBox.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleY="0.003"/>
+                                <RotateTransform/>
+                                <TranslateTransform Y="-0.003"/>
+                            </TransformGroup>
+                        </TextBox.RenderTransform>
+                    </TextBox>
+                    <Button x:Name="btnPayslip" Content="GENERATE PAYSLIP" HorizontalAlignment="Left" Height="30" Margin="915,639,0,0" VerticalAlignment="Top" Width="216" Background="#FFB87EF8" Foreground="White" FontFamily="Cambria Math" FontWeight="Bold" FontSize="18" BorderBrush="{x:Null}" Click="btnPayslip_Click">
+                        <Button.Effect>
+                            <DropShadowEffect Color="#FF686868"/>
+                        </Button.Effect>
+                    </Button>
+                </Grid>
+            </TabItem>
+            <!--tab for employee list-->
+            <TabItem Header="EMPLOYEE LIST" FontFamily="Cambria Math" FontSize="16" FontWeight="Bold" Background="#FFD4AF37" Margin="66.6,-3,-90.6,-3.6" ToolTip="See Employee List">
+                <Grid Background="#FF374057" Margin="0,0,-0.6,0.2">
+                    <StackPanel HorizontalAlignment="Left" Height="51" Margin="1045,84,0,0" VerticalAlignment="Top" Width="39" RenderTransformOrigin="1.093,0.542">
+                        <Image Source="resources/search.png" Margin="-3,0,0.2,0" Height="53"/>
+                    </StackPanel>
+                    <Label x:Name="label1_Copy3" Content="Search Employees:" HorizontalAlignment="Left" Height="35" Margin="548,93,0,0" VerticalAlignment="Top" Width="162" FontSize="18" FontFamily="Cambria Math" Foreground="#FFD4F2E8" FontWeight="Normal"/>
+                    <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="29" Margin="727,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="298" RenderTransformOrigin="0.412,-0.03" Background="#FF76798A" TextChanged="txtSearch_TextChanged" Foreground="White" BorderThickness="0,0,0,2" BorderBrush="#FF27C8FD"/>
+
+                    <!--DATAGRID-->
+                    <DataGrid x:Name="dtgemplist" Margin="0,0,42.4,77.6" BorderBrush="{x:Null}" Foreground="LemonChiffon" FontFamily="Cambria Math" FontWeight="Normal" 
+                      SelectionChanged="dtgemplist_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Visible" HorizontalContentAlignment="Stretch" ToolTip="Employee Details" Height="438" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="1110" VerticalGridLinesBrush="{x:Null}" HorizontalGridLinesBrush="{x:Null}" FontSize="14" IsReadOnly="True" IsTextSearchEnabled="True" CanUserResizeRows="False" RowDetailsVisibilityMode="Visible">
+                        <DataGrid.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="0.225"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </DataGrid.RenderTransform>
+                        <DataGrid.Background>
+                            <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                                <GradientStop Color="#FF27C8FD" Offset="0"/>
+                                <GradientStop Color="#FF50A0FD" Offset="0.339"/>
+                                <GradientStop Color="#FF5A84F5" Offset="0.661"/>
+                                <GradientStop Color="#FF6589FD" Offset="1"/>
+                            </LinearGradientBrush>
+                        </DataGrid.Background>
+                        <!--<ColumnHeader>-->
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="EmployeeID" Binding="{Binding EmployeeID}" Width="100" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="180" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Gender" Binding="{Binding Gender}" Width="80" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Age" Binding="{Binding Age}" Width="70" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Birthday" Binding="{Binding Birthdate}" Width="110" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="400" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="80" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Contact" Binding="{Binding Contact}" Width="120" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Emergency Contact" Binding="{Binding Econtact}" Width="130" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Position" Binding="{Binding Position}" Width="110" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Daily Rate" Binding="{Binding Dailyrate}" Width="90" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Work Status" Binding="{Binding WorkStatus}" Width="100" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Hired Date" Binding="{Binding Hired}" Width="110" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="btnEdit" Content="Generate Payroll" HorizontalAlignment="Left" Margin="989,633,0,0" VerticalAlignment="Top" Width="164" Height="31" Background="#FFB87EF8" Foreground="White" FontFamily="Cambria Math" FontWeight="Bold" FontSize="18" Click="btnGenerate_Click" BorderBrush="{x:Null}">
+                        <Button.Effect>
+                            <DropShadowEffect BlurRadius="1"/>
+                        </Button.Effect>
+                    </Button>
+                    <TextBlock x:Name="date1"  Foreground="White" FontSize="12" Padding="50 0 0 0 " HorizontalAlignment="Left" Width="223" Margin="23,22,0,601" ><Run Text="            "/><Run Text="9/26/2019 2:50:36 AM"/></TextBlock>
+                    <Label x:Name="label_Copy25" Content="E" HorizontalAlignment="Left" Margin="41,34,0,0" VerticalAlignment="Top" Height="116" Width="67" FontFamily="Javanese Text" FontWeight="Bold" FontSize="72" Foreground="#FFD4AF37"/>
+                    <Label x:Name="label1_Copy6" Content="mployee" HorizontalAlignment="Left" Margin="92,84,0,0" VerticalAlignment="Top" Height="50" Width="143" Foreground="#FFD4AF37" FontFamily="Cambria Math" FontSize="36"/>
+                    <Label x:Name="label1_Copy7" Content="List" HorizontalAlignment="Left" Margin="227,77,0,0" VerticalAlignment="Top" Height="52" Width="122" Foreground="#FFF6F5F3" FontFamily="Cambria Math" FontSize="48"/>
+                    <materialDesign:PopupBox HorizontalAlignment="Stretch" Margin="1134,11,9,645" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Foreground="#FFFCFCFC" RenderTransformOrigin="0.5,0.5">
+                        <StackPanel Width="150">
+                            <Button x:Name="btnHome1" Content="Home" Background="#FFD4AF37" Click="btnHome_Click_1" />
+                            <Button x:Name="btnCalendar1" Content="Calendar" Background="#FFD4AF37" Click="btnCalendar_Click" />
+                            <Button x:Name="btnAbout1" Content="About Us" Background="#FFD4AF37" Click="btnAbout_Click" />
+                            <Button x:Name="btnContact1" Content="Contact Us" Background="#FFD4AF37" Click="btnContact_Click" />
+                            <Separator/>
+                            <Button x:Name="btnHelp1" Content="Help" Background="#FFD4AF37" Click="btnHelp_Click"/>
+
+                        </StackPanel>
+                    </materialDesign:PopupBox>
+                </Grid>
+            </TabItem>
+
+            <!--tab for the payroll list-->
+            <TabItem Header="PAYROLL LIST" Margin="90.6,-3,-90.8,-2.6" FontFamily="Cambria Math" FontSize="16" FontWeight="Bold" Background="#FFD4AF37" ToolTip="See Payroll List" HorizontalAlignment="Left" Width="153">
+                <Grid Background="#FF374057" Margin="-4,1,-1.6,-1.8" HorizontalAlignment="Left" Width="1200">
+                    <StackPanel HorizontalAlignment="Left" Height="42" Margin="1079,87,0,0" VerticalAlignment="Top" Width="47" RenderTransformOrigin="1.093,0.542">
+                        <Image Source="resources/search.png" Margin="-3,0,0.6,0" Height="38"/>
+                    </StackPanel>
+                    <TextBlock x:Name="date2"  Foreground="White" FontSize="12" Padding="50 0 0 0 " HorizontalAlignment="Left" Width="223" Margin="23,22,0,601" ><Run Text="            "/><Run Text="9/26/2019 2:50:36 AM"/></TextBlock>
+                    <Label x:Name="label_Copy24" Content="P" HorizontalAlignment="Left" Margin="36,29,0,0" VerticalAlignment="Top" Height="116" Width="67" FontFamily="Javanese Text" FontWeight="Bold" FontSize="72" Foreground="#FFD4AF37"/>
+                    <Label x:Name="label1_Copy4" Content="ayroll" HorizontalAlignment="Left" Margin="77,83,0,0" VerticalAlignment="Top" Height="50" Width="122" Foreground="#FFD4AF37" FontFamily="Cambria Math" FontSize="36"/>
+                    <Label x:Name="label1_Copy5" Content="List" HorizontalAlignment="Left" Margin="172,74,0,0" VerticalAlignment="Top" Height="52" Width="122" Foreground="#FFF6F5F3" FontFamily="Cambria Math" FontSize="48"/>
+                    <DataGrid x:Name="lvPayroll" Margin="0,0,54,84" BorderBrush="{x:Null}" Foreground="#FFFCFCF8" FontFamily="Cambria Math" FontWeight="Normal" 
+                        ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch" ToolTip="Payroll of Employees" Height="458" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="1085" VerticalGridLinesBrush="{x:Null}" HorizontalGridLinesBrush="{x:Null}" FontSize="14" Grid.IsSharedSizeScope="True" HorizontalScrollBarVisibility="Visible" SelectionChanged="lvPayroll_SelectionChanged" IsReadOnly="True">
+                        <DataGrid.Background>
+                            <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                                <GradientStop Color="#FF40E6B8" Offset="0"/>
+                                <GradientStop Color="#FF1AD4BC" Offset="0.109"/>
+                                <GradientStop Color="#FF16C8C9" Offset="0.297"/>
+                                <GradientStop Color="#FF2FB1C6" Offset="1"/>
+                            </LinearGradientBrush>
+                        </DataGrid.Background>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Date Issued" Binding="{Binding DateIssued }" Width="110" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True" CanUserResize="False"/>
+                            <DataGridTextColumn Header="Employee ID" Binding="{Binding EID}" Width="100" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True" CanUserResize="False"/>
+                            <DataGridTextColumn Header="no. of Days" Binding="{Binding Num_days}" Width="100" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True" CanUserResize="False"/>
+                            <DataGridTextColumn Header="Days on Leave" Binding="{Binding Leave}" Width="110" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True" CanUserResize="False"/>
+                            <DataGridTextColumn Header="Rate Wage" Binding="{Binding RateWage}" Width="130" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True" CanUserResize="False"/>
+                            <DataGridTextColumn Header="OT hours" Binding="{Binding OThours}" Width="100" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True" CanUserResize="False"/>
+                            <DataGridTextColumn Header="Overtime Pay" Binding="{Binding Overtime}" Width="120" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True" CanUserResize="False"/>
+                            <DataGridTextColumn Header="Night Differential" Binding="{Binding NightDifferential}" Width="135" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True" CanUserResize="False"/>
+                            <DataGridTextColumn Header="Philhealth" Binding="{Binding Philhealth}" Width="120" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True" Foreground="#FFF6ECEC" CanUserResize="False"/>
+                            <DataGridTextColumn Header="Holliday Pay" Binding="{Binding HollPay}" Width="125" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True" CanUserResize="False"/>
+                            <DataGridTextColumn Header="Basic Pay" Binding="{Binding Basic_Pay}" Width="120" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True" CanUserResize="False"/>
+                            <DataGridTextColumn Header="Cash Advance" Binding="{Binding Cash_ad}" Width="120" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True" CanUserResize="False"/>
+                            <DataGridTextColumn Header="Philhealth" Binding="{Binding Philhealth}" Width="120" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" Foreground="#FFF6ECEC" CanUserResize="False"/>
+                            <DataGridTextColumn Header="Withholding Tax" Binding="{Binding WithholdingTax}" Width="130" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True" CanUserResize="False"/>
+                            <DataGridTextColumn Header="SSS" Binding="{Binding SSS}" Width="120" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True" CanUserResize="False"/>
+                            <DataGridTextColumn Header="Pag-ibig" Binding="{Binding Pagibig}" Width="120" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True" CanUserResize="False"/>
+                            <DataGridTextColumn Header="Other Deduction1" Binding="{Binding d1}" Width="120" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True" CanUserResize="False"/>
+                            <DataGridTextColumn Header="Amount" Binding="{Binding da1}" Width="100" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True" CanUserResize="False"/>
+                            <DataGridTextColumn Header="Other Deduction2" Binding="{Binding d2}" Width="120" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True" CanUserResize="False"/>
+                            <DataGridTextColumn Header="Amount" Binding="{Binding da2}" Width="100" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True" CanUserResize="False"/>
+                            <DataGridTextColumn Header="Other Deduction3" Binding="{Binding d3}" Width="120" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True" CanUserResize="False"/>
+                            <DataGridTextColumn Header="Amount" Binding="{Binding da3}" Width="100" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True" CanUserResize="False"/>
+                            <DataGridTextColumn Header="Total Deduction" Binding="{Binding totald}" Width="120" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True" CanUserResize="False"/>
+                            <DataGridTextColumn Header="Net Income" Binding="{Binding Net_income}" Width="120" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" Foreground="White" CanUserResize="False"/>
+                            <DataGridTextColumn Header="Pay Day" Binding="{Binding PayDay}" Width="110" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True" CanUserResize="False"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <TextBox x:Name="txtSearchPay" Foreground="White" BorderThickness="0,0,0,2" BorderBrush="#FF27C8FD" HorizontalAlignment="Left" Height="32" Margin="783,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="287"  Background="#FF76798A" FontWeight="Bold" TextChanged="txtSearchPay_TextChanged"/>
+                    <Label x:Name="label1_Copy8" Content="Search:" HorizontalAlignment="Left" Height="35" Margin="698,95,0,0" VerticalAlignment="Top" Width="68" FontSize="18" FontFamily="Cambria Math" Foreground="#FFD4F2E8" FontWeight="Normal"/>
+                    <Button x:Name="btnEditPayroll" Content="EDIT" HorizontalAlignment="Left" Margin="1007,638,0,0" VerticalAlignment="Top" Width="141" Height="31" Background="#FF5C93FB" Foreground="White" FontFamily="Cambria Math" FontWeight="Bold" FontSize="18" BorderBrush="{x:Null}" Click="btnEditPayroll_Click">
+                        <Button.Effect>
+                            <DropShadowEffect Color="#FF686868"/>
+                        </Button.Effect>
+                    </Button>
+                    <materialDesign:PopupBox HorizontalAlignment="Stretch" Margin="1139,9,10,648" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Foreground="#FFFCFCFC" RenderTransformOrigin="0.5,0.5">
+                        <StackPanel Width="150">
+                            <Button x:Name="btnHome2" Content="Home" Background="#FFD4AF37" Click="btnHome_Click_1" />
+                            <Button x:Name="btnCalendar2" Content="Calendar" Background="#FFD4AF37" Click="btnCalendar_Click" />
+                            <Button x:Name="btnAbout2" Content="About Us" Background="#FFD4AF37" Click="btnAbout_Click" />
+                            <Button x:Name="btnContact2" Content="Contact Us" Background="#FFD4AF37" Click="btnContact_Click" />
+                            <Separator/>
+                            <Button x:Name="btnHelp2" Content="Help" Background="#FFD4AF37" Click="btnHelp_Click"/>
+
+                        </StackPanel>
+                    </materialDesign:PopupBox>
+                    <DatePicker x:Name="EditDateChecker" HorizontalAlignment="Left" Margin="323,20,0,0" VerticalAlignment="Top" Width="189" IsEnabled="False" Visibility="Hidden"/>
+                    <DatePicker x:Name="di" HorizontalAlignment="Left" Margin="541,20,0,0" VerticalAlignment="Top" Width="93" IsEnabled="False" Visibility="Hidden"/>
+
+                </Grid>
+            </TabItem>
+
+
+
+        </TabControl>
+
+    </Grid>
+</Window>

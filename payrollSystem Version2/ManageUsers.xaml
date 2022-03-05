@@ -1,0 +1,82 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:payrollSystem_Version2"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="payrollSystem_Version2.ManageUsers"
+        mc:Ignorable="d"
+       Title="USERS" Height= "712.6" Width= "861.2" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF374057" Height="685" VerticalAlignment="Top" HorizontalAlignment="Left" Width="856" Margin="0,-2,-1.6,0">
+        <StackPanel HorizontalAlignment="Left" Height="207" Margin="53,64,0,0" VerticalAlignment="Top" Width="187">
+            <Image Source="resources/users.png" Height="184" Margin="0,0,-1.8,0"/>
+        </StackPanel>
+        <Label x:Name="label" Content="MANAGE USERS" HorizontalAlignment="Left" Margin="378,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="229" FontFamily="Constantia" FontSize="20" FontWeight="Bold" Foreground="#FFD4F2E8"/>
+        <Label x:Name="label_Copy" Content="List of Users:" HorizontalAlignment="Left" Margin="62,275,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="229" FontFamily="Constantia" FontSize="20" FontWeight="Bold" Foreground="#FFD4F2E8"/>
+        <Label x:Name="label_Copy1" HorizontalAlignment="Left" Margin="216,157,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="95" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8"/>
+        <Label x:Name="txtUsernameUsers" Content="Username:" HorizontalAlignment="Left" Margin="277,203,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="95" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8"/>
+        <Label x:Name="label_Copy4" HorizontalAlignment="Left" Margin="219,77,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="95" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8"/>
+        <Label x:Name="label_Copy6" Content="User Level:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="96" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8" Margin="277,165,0,0"/>
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="401,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Background="#FF66798F" BorderBrush="#FF66798F" Foreground="#FFEAEAEA" FontFamily="Cambria Math" FontSize="14"/>
+        <Button x:Name="btnAdd" Content="ADD" HorizontalAlignment="Left" Margin="667,101,0,0" VerticalAlignment="Top" Width="133" Height="28" Background="#FF21DEB5" Foreground="White" FontFamily="Cambria Math" FontSize="18" FontWeight="Bold" Click="btnAdd_Click" BorderBrush="{x:Null}">
+            <Button.Effect>
+                <DropShadowEffect Color="#FF686868"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="btnEdit" Content="UPDATE" HorizontalAlignment="Left" Margin="667,142,0,0" VerticalAlignment="Top" Width="133" Height="28" Background="#FF5C93FB" Foreground="White" FontFamily="Cambria Math" FontWeight="Bold" FontSize="18" Click="btnEdit_Click" BorderBrush="{x:Null}">
+            <Button.Effect>
+                <DropShadowEffect Color="#FF686868"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="btnNew" Content="NEW" HorizontalAlignment="Left" Margin="667,183,0,0" VerticalAlignment="Top" Width="133" Height="28" Background="#FFB87EF8" Foreground="White" FontFamily="Cambria Math" FontWeight="Bold" FontSize="18" Click="btnNew_Click" BorderBrush="{x:Null}">
+            <Button.Effect>
+                <DropShadowEffect Color="#FF686868"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="BtnDelete" Content="DELETE" HorizontalAlignment="Left" Margin="667,223,0,0" VerticalAlignment="Top" Width="133" Height="28" Background="#FFFC768A" Foreground="White" FontWeight="Bold" FontSize="18" FontFamily="Cambria Math" Click="BtnDelete_Click" BorderBrush="{x:Null}">
+            <Button.Effect>
+                <DropShadowEffect Color="#FF686868"/>
+            </Button.Effect>
+        </Button>
+        <DataGrid x:Name="lvUsers" ToolTip="User details" BorderBrush="{x:Null}" FontFamily="Cambria Math" FontSize="16" SelectionChanged="lvUsers_SelectionChanged" FontWeight="Bold" Foreground="White" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch" Height="332" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="739" VerticalGridLinesBrush="{x:Null}" HorizontalGridLinesBrush="{x:Null}" Margin="0,322,56,0">
+            <DataGrid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF877BED" Offset="1"/>
+                    <GradientStop Color="#FFED89E7"/>
+                    <GradientStop Color="#FFC37FF3" Offset="0.527"/>
+                </LinearGradientBrush>
+            </DataGrid.Background>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="UserID" Width="120" Binding="{Binding UserID}" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Name" Width="200" Binding="{Binding Name}" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Username" Width="200" Binding="{Binding Username}" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Type" Width="200" Binding="{Binding Type}" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="txtUsernameUsers_Copy" Content="Password:" HorizontalAlignment="Left" Margin="282,243,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="95" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="26" Margin="401,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Background="#FF66798F" BorderBrush="#FF66798F" Foreground="#FFEAEAEA" FontFamily="Cambria Math" FontSize="14"/>
+        <Label x:Name="txtUsernameUsers_Copy1" Content="Name:" HorizontalAlignment="Left" Margin="305,124,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="95" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8"/>
+        <Label x:Name="txtUsernameUsers_Copy2" Content="UserID:" HorizontalAlignment="Left" Margin="297,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.192,0.097" Width="95" FontFamily="Constantia" FontSize="14" FontWeight="Bold" Foreground="#FFD4F2E8"/>
+        <TextBox x:Name="txtUserID" HorizontalAlignment="Left" Height="25" Margin="400,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Background="#FF66798F" BorderBrush="#FF66798F" Foreground="#FFEAEAEA" FontFamily="Cambria Math" FontSize="14" IsEnabled="False"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="401,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Background="#FF66798F" BorderBrush="#FF66798F" Foreground="#FFEAEAEA" FontFamily="Cambria Math" FontSize="14"/>
+        <ComboBox x:Name="cbUserType" HorizontalAlignment="Left" Margin="401,165,0,0" VerticalAlignment="Top" Width="216" Foreground="#FFEBEBF3" Background="#FF66798F" BorderBrush="{x:Null}" FontFamily="Cambria Math" FontSize="14" Height="27" SelectedIndex="0" BorderThickness="0" SelectionChanged="cbUserType_SelectionChanged" >
+            <ComboBoxItem Content="ADMINISTRATOR"  Height="30" Margin="0,0,0.4,0" Background="#FF1B5E76" BorderBrush="{x:Null}" BorderThickness="0" ToolTip="Select User Type"/>
+            <ComboBoxItem  Content="HUMAN RESOURCES" Height="30" Margin="0,0,0.4,0" Background="#FF0D5C79" BorderBrush="{x:Null}" BorderThickness="0"/>
+            <ComboBoxItem Content="PAYROLL MASTER" Height="30" Margin="0,0,0.4,0" Background="#FF0D5C79" BorderBrush="{x:Null}" BorderThickness="0"/>
+            <ComboBoxItem Content="SUPER ADMIN" Height="30" Margin="0,0,0.4,0" Background="#FF0D5C79" BorderBrush="{x:Null}" BorderThickness="0"/>
+        </ComboBox>
+        <TextBlock x:Name="date"  Foreground="#FFD4F2E8" FontSize="16" Height="40" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" Width="264" Margin="19,13,0,632" ><Run Text="            "/><Run Text="9/26/2019 2:50:36 AM"/></TextBlock>
+        <StackPanel VerticalAlignment="Center" Margin="683,13,12,637">
+            <materialDesign:PopupBox HorizontalAlignment="Stretch" Margin="111,5,8.8,5" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Foreground="#FFFCFCFC">
+                <StackPanel Width="150">
+                    <Button x:Name="btnHome1" Content="Home" Background="#FFD4AF37" Click="btnHome_Click_1" />
+                    <Button x:Name="btnAbout" Content="About Us" Background="#FFD4AF37" Click="btnAbout_Click" />
+                    <Button x:Name="btnContact" Content="Contact Us" Background="#FFD4AF37" Click="btnContact_Click"/>
+                    <Separator/>
+                    <Button x:Name="btnHelp" Content="Help" Background="#FFD4AF37" Click="Button_Click_1"/>
+
+                </StackPanel>
+            </materialDesign:PopupBox>
+        </StackPanel>
+    </Grid>
+</Window>

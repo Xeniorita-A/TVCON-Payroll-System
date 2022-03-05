@@ -1,0 +1,47 @@
+﻿<Window x:Class="payrollSystem_Version2.SuperHistory"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:payrollSystem_Version2"
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Transaction History" Height="756.61" Width="1123.85" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,-2.4,-3.8" Background="#FF374057">
+        <DataGrid x:Name="lvHistory" ToolTip="Transaction History" BorderBrush="{x:Null}" FontFamily="Cambria Math" FontSize="16" FontWeight="Bold" Foreground="White" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch" Height="457" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="970" VerticalGridLinesBrush="{x:Null}" HorizontalGridLinesBrush="{x:Null}" Margin="74,175,0,0">
+            <DataGrid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF877BED" Offset="1"/>
+                    <GradientStop Color="#FFED89E7"/>
+                    <GradientStop Color="#FFC37FF3" Offset="0.527"/>
+                </LinearGradientBrush>
+            </DataGrid.Background>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="User" Width="250" Binding="{Binding User}" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Transaction History" Width="500" Binding="{Binding History}" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Date" Width="110" Binding="{Binding Date}" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock x:Name="date"  Foreground="#FFD4F2E8" FontSize="16" Height="35" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" Width="264" Margin="27,24,0,667" ><Run Text="            "/><Run Text="9/26/2019 2:50:36 AM"/></TextBlock>
+        <StackPanel VerticalAlignment="Center" Margin="952,19,18.6,673">
+            <materialDesign:PopupBox HorizontalAlignment="Stretch" Margin="82,5,9.6,5" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Foreground="#FFFCFCFC">
+                <StackPanel Width="150">
+                    <Button x:Name="btnHome" Content="Home" Background="#FFD4AF37" Click="btnHome_Click" />
+                    <Button x:Name="btnAbout" Content="About Us" Background="#FFD4AF37" Click="btnAbout_Click" />
+                    <Button x:Name="btnContact" Content="Contact Us" Background="#FFD4AF37" Click="btnContact_Click" />
+                    <Separator/>
+                    <Button Content="Help" Background="#FFD4AF37" Click="Button_Click"/>
+
+                </StackPanel>
+            </materialDesign:PopupBox>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="57" Margin="1027,90,0,0" VerticalAlignment="Top" Width="57" RenderTransformOrigin="1.093,0.542">
+            <Image Source="resources/search.png" Margin="-3,0,-0.2,0" Height="53"/>
+        </StackPanel>
+        <Label x:Name="label1_Copy3" Content="Search:" HorizontalAlignment="Left" Height="43" Margin="644,98,0,0" VerticalAlignment="Top" Width="85" FontSize="24" FontFamily="Cambria Math" Foreground="#FFD4F2E8" RenderTransformOrigin="0.498,0.414"/>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="29" Margin="731,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="298" RenderTransformOrigin="0.412,-0.03" Background="#FF76798A" Foreground="White" FontSize="16" FontFamily="Cambria Math" TextChanged="txtSearch_TextChanged_1"/>
+        <Label x:Name="label" Content="A" HorizontalAlignment="Left" Margin="64,36,0,0" VerticalAlignment="Top" Height="116" Width="67" FontFamily="Javanese Text" FontWeight="Bold" FontSize="72" Foreground="#FFD4AF37"/>
+        <Label x:Name="label1" Content="udit" HorizontalAlignment="Left" Margin="117,95,0,0" VerticalAlignment="Top" Height="50" Width="174" Foreground="#FFD4AF37" FontFamily="Cambria Math" FontSize="36"/>
+        <Label x:Name="label1_Copy" Content="Trail" HorizontalAlignment="Left" Margin="180,85,0,0" VerticalAlignment="Top" Height="65" Width="193" Foreground="#FFF6F5F3" FontFamily="Cambria Math" FontSize="48" RenderTransformOrigin="0.528,0.493"/>
+    </Grid>
+</Window>

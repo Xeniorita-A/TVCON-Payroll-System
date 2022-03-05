@@ -1,0 +1,73 @@
+﻿<Window x:Class="payrollSystem_Version2.AdminEmployee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:payrollSystem_Version2"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        mc:Ignorable="d"
+        Title="Employee List" Height="739.27" Width="1193.677" ResizeMode="CanResizeWithGrip" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,0.2,0.2">
+        <Grid Background="#FF374057" Margin="0,0,0,-2.6">
+            <StackPanel HorizontalAlignment="Left" Height="57" Margin="1073,85,0,0" VerticalAlignment="Top" Width="57" RenderTransformOrigin="1.093,0.542">
+                <Image Source="resources/search.png" Margin="-3,0,-0.2,0" Height="53"/>
+            </StackPanel>
+            <Label x:Name="label1_Copy3" Content="Search Employee:" HorizontalAlignment="Left" Height="43" Margin="573,99,0,0" VerticalAlignment="Top" Width="194" FontSize="24" FontFamily="Cambria Math" Foreground="#FFD4F2E8"/>
+            <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="29" Margin="772,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="298" RenderTransformOrigin="0.412,-0.03" Background="#FF76798A" TextChanged="txtSearch_TextChanged" Foreground="White" FontFamily="Cambria Math" FontSize="16"/>
+
+            <!--DATAGRID-->
+            <DataGrid x:Name="dtgemplist" Margin="0,0,39.2,78.2" BorderBrush="{x:Null}" Foreground="LemonChiffon" FontFamily="Cambria Math" FontWeight="Normal" 
+                      ScrollViewer.HorizontalScrollBarVisibility="Visible" HorizontalContentAlignment="Stretch" ToolTip="Employee Details" Height="438" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="1113" VerticalGridLinesBrush="{x:Null}" HorizontalGridLinesBrush="{x:Null}" FontSize="14" IsReadOnly="True" IsTextSearchEnabled="True" CanUserResizeRows="False" RowDetailsVisibilityMode="Visible">
+                <DataGrid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.225"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </DataGrid.RenderTransform>
+                <DataGrid.Background>
+                    <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                        <GradientStop Color="#FF27C8FD" Offset="0"/>
+                        <GradientStop Color="#FF50A0FD" Offset="0.339"/>
+                        <GradientStop Color="#FF5A84F5" Offset="0.661"/>
+                        <GradientStop Color="#FF6589FD" Offset="1"/>
+                    </LinearGradientBrush>
+                </DataGrid.Background>
+                <!--<ColumnHeader>-->
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="EmployeeID" Binding="{Binding EmployeeID}" Width="100" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="180" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Gender" Binding="{Binding Gender}" Width="80" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Age" Binding="{Binding Age}" Width="70" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Birthday" Binding="{Binding Birthdate}" Width="110" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="400" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="80" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Contact" Binding="{Binding Contact}" Width="120" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Emergency Contact" Binding="{Binding Econtact}" Width="130" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Position" Binding="{Binding Position}" Width="110" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Daily Rate" Binding="{Binding Dailyrate}" Width="90" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Work Status" Binding="{Binding WorkStatus}" Width="100" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Hired Date" Binding="{Binding Hired}" Width="110" FontFamily="Cambria Math" FontSize="14" FontWeight="Bold" IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <StackPanel VerticalAlignment="Center" Margin="1013,15,13.2,662.2">
+                <materialDesign:PopupBox HorizontalAlignment="Stretch" Margin="111,5,8.8,5" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Foreground="#FFFCFCFC">
+                    <StackPanel Width="150">
+                        <Button x:Name="btnHome" Content="Home" Background="#FFD4AF37" Click="btnHome_Click" />
+                        <Button x:Name="btnAbout" Content="About Us" Background="#FFD4AF37" Click="btnAbout_Click" />
+                        <Button x:Name="btnContact" Content="Contact Us" Background="#FFD4AF37" Click="btnContact_Click" />
+                        <Separator/>
+                        <Button Content="Help" Background="#FFD4AF37" Click="Button_Click"/>
+                    </StackPanel>
+                </materialDesign:PopupBox>
+            </StackPanel>
+            <TextBlock x:Name="date"  Foreground="#FFD4F2E8" FontSize="16" Height="40" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" Width="264" Margin="33,26,0,646.2" ><Run Text="            "/><Run Text="9/26/2019 2:50:36 AM"/></TextBlock>
+            <Label x:Name="label" Content="E" HorizontalAlignment="Left" Margin="35,42,0,0" VerticalAlignment="Top" Height="116" Width="67" FontFamily="Javanese Text" FontWeight="Bold" FontSize="72" Foreground="#FFD4AF37"/>
+            <Label x:Name="label1" Content="mployee" HorizontalAlignment="Left" Margin="86,92,0,0" VerticalAlignment="Top" Height="50" Width="143" Foreground="#FFD4AF37" FontFamily="Cambria Math" FontSize="36"/>
+            <Label x:Name="label1_Copy" Content="List" HorizontalAlignment="Left" Margin="221,85,0,0" VerticalAlignment="Top" Height="52" Width="122" Foreground="#FFF6F5F3" FontFamily="Cambria Math" FontSize="48"/>
+
+        </Grid>
+    </Grid>
+</Window>
